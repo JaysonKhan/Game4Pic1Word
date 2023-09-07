@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".ui.game.GameActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/rang1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_back_in_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                android:tint="@color/white" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:text="Game"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/coin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="347"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="13dp"
+                android:src="@drawable/khancoin" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/answerLine"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionBar">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageOne"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/rang4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/imageThree"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/imageTwo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageTwo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/rang4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/imageFour"
+            app:layout_constraintLeft_toRightOf="@id/imageOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageThree"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/rang4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/imageFour"
+            app:layout_constraintTop_toBottomOf="@id/imageOne" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageFour"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/rang4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/imageThree"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageTwo" />
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/stamp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/btn_help"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/stamp"
+            android:gravity="center"
+            android:backgroundTint="@color/rang0"
+            android:text="SOS"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/answerLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="1dp"
+            android:background="@drawable/bg_variant"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle2"
+            android:text="A" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/variantLine1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/variantLine2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/boxStyle"
+            android:text="A" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/variantLine2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="A"
+            style="@style/boxStyle"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
