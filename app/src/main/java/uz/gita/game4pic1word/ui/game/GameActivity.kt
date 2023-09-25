@@ -1,15 +1,11 @@
 package uz.gita.game4pic1word.ui.game
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.os.Vibrator
 import android.view.View
 import android.view.Window
@@ -30,8 +26,8 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     private val answer = ArrayList<AppCompatTextView>(8)
     private lateinit var backButton: AppCompatImageView
 
-    private lateinit var txt_coin: TextView
-    private lateinit var txt_level: TextView
+    private lateinit var txtCoin: TextView
+    private lateinit var txtLevel: TextView
     private lateinit var sos: TextView
 
     private lateinit var presenter:GamePresenter
@@ -49,11 +45,11 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         restoreScore()
         attachClickListeners()
     }
-    fun restoreScore(){
-        var coin = settings.coins
-        var level = settings.level
-        txt_coin.setText("$coin")
-        txt_level.setText("$level")
+    private fun restoreScore(){
+        val coin = settings.coins
+        val level = settings.level
+        txtCoin.text = "$coin"
+        txtLevel.text = "$level"
     }
 
     private fun loadViews() {
@@ -62,8 +58,8 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         images.add(findViewById(R.id.imageThree))
         images.add(findViewById(R.id.imageFour))
 
-        txt_coin = findViewById(R.id.coin)
-        txt_level = findViewById(R.id.level)
+        txtCoin = findViewById(R.id.coin)
+        txtLevel = findViewById(R.id.level)
         sos = findViewById(R.id.btn_help)
 
         val variantLine1: LinearLayoutCompat = findViewById(R.id.variantLine1)
@@ -101,8 +97,8 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         val container: ConstraintLayout = dialog.findViewById(R.id.container_dialog)
         title.text = header
         message.text = msg
-        var color: Int
-        if (txtYes.equals("Retry")){
+        val color: Int
+        if (txtYes == "Retry"){
             color = Color.WHITE
             container.setBackgroundResource(R.drawable.wrong)
         }else{
@@ -111,11 +107,11 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         }
         title.setTextColor(color)
         message.setTextColor(color)
-        btnNo.setText(txtNo)
-        btnYes.setText(txtYes)
+        btnNo.text = txtNo
+        btnYes.text = txtYes
 
         btnYes.setOnClickListener {
-            if (txtYes.equals("Retry")){
+            if (txtYes == "Retry"){
                 presenter.describeRetry()
                 dialog.cancel()
             }else{
@@ -131,15 +127,6 @@ class GameActivity : AppCompatActivity(), GameContract.View {
                     dialog.setCancelable(false)
                     settings.level = 1
                     settings.saveToPref()
-                    val handler = Handler()
-                    val delay = 7000
-//                    handler.postDelayed(object : Runnable {
-//                        override fun run() {
-//                            startActivity(Intent(this@GameActivity, InfoActivity::class.java))
-//                            Toast.makeText(this@GameActivity, "About Us", Toast.LENGTH_SHORT).show()
-//                            dialog.cancel()
-//                        }
-//                    }, delay.toLong())
                    }
             }
         }
@@ -188,7 +175,7 @@ class GameActivity : AppCompatActivity(), GameContract.View {
                 if (settings.findOneLetter()){
                     answer[getFirstEmptyPos()].isEnabled = true
                     answer[getFirstEmptyPos()].isClickable = false
-                    answer[getFirstEmptyPos()].setText(presenter.getLetterInThisPos(getFirstEmptyPos()))
+                    answer[getFirstEmptyPos()].text = presenter.getLetterInThisPos(getFirstEmptyPos())
                     presenter.checkUserAnswer(getUserFullAnswer())
                     Toast.makeText(this@GameActivity, "You known 1 letter for 5 KHAN coins 😁 ", Toast.LENGTH_SHORT).show()
                     restoreScore()

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">4Pic1Word</string>
     <string name="info">Yaratuvchi: Q.Jahongir \n KHAN347 brendi asosida tuzilgan bu o\'yin GITA dasturlash akademiyasida o\'rgatilgan bilimlar asosida tuzildi.... Dasturda xatolik bo\'lsa quyidagi ijtimoiy tarmoqlar orqali yozib qoldirishingiz mumkin😊</string>
-
+    <string name="description">Ilova: HK2048 \nYaratuvchi: Q.Jahongir \nYangilanish: 07.04.2023\nVersiya: 1.0 \n \n Qo\'shimcha ma\'lumot: Bu mening 3-ilovam bo\'lib uning kodlari Java dasturlash tilida yozilgan</string>
+    <string name="info_string">Bu o\'yin Q.Jahongir tomonidan GITA dasturchilar akademiyasida o\'rgatilgan bilimlar asosida yaratildi... O\'yin o\'ynash davomida yuzaga kelgan kamchiliklar bo\'lsa oldindan uzur so\'raymiz... Hurmat bilan KHAN347 \n Telegram: @J_KHAN347</string>
 </resources>
